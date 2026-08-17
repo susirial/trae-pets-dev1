@@ -134,6 +134,45 @@ bin/trae-pet(.cmd/.sh) -> bin/trae-pet.js -> dist/cli.cjs
 
 > 项目当前未声明 CI 构建与覆盖率统计，因此上方徽章展示为 `not configured` / `not tracked`，与仓库现状保持一致。
 
+### 快速启动（TL;DR）
+
+从零到桌宠跑起来只需三条命令，按顺序执行：
+
+```bash
+# 1. 安装依赖
+npm install
+
+# 2. 编译 Hook CLI（关键步骤：缺失时 Hook 事件会静默失败）
+npm run build:cli
+
+# 3. 启动桌宠应用（启动时会自动接入本机全部 TRAE 版本的 Hook）
+npm run dev
+```
+
+看到桌宠出现在桌面后，在 TRAE 中发送任意消息，桌宠应切换为 `review`、`waiting`、`happy` 等状态。
+
+启动时应用会自动扫描 `~/.trae`、`~/.trae-cn` 等目录并接入 Hook（幂等合并，不影响已有 Hook），无需手动执行 `install-hooks`。
+
+如果桌宠没有响应 TRAE 事件，可手动验证并修复：
+
+```bash
+node bin/trae-pet.js verify-hooks   # 检查接入状态
+node bin/trae-pet.js install-hooks  # 自动接入失败时的修复手段
+```
+
+注意事项：
+
+- **顺序很重要**：`build:cli` 必须在启动前完成。只运行 `npm run dev` 而不构建 CLI，自动接入会写入指向不存在的 CLI 的 Hook，桌宠能显示但不会响应任何 TRAE 事件。
+- **Electron 二进制下载失败**：`npm install` 后若 `npm run dev` 报 `Error: Electron uninstall`，说明 Electron 二进制未下载成功（国内网络常见），执行以下命令重试：
+
+  ```bash
+  node node_modules/electron/install.js
+  ```
+
+  也可在安装前设置镜像源：`ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ npm install`
+
+以下各节是对每个步骤的详细说明，供排障和深入理解使用。
+
 ### 1. 安装依赖
 
 ```bash
