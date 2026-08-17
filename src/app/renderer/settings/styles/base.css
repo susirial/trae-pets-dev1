@@ -1,0 +1,112 @@
+/* =============================================================
+   Base — reset, document, focus, a11y, keyframes
+   ============================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  height: 100vh;
+}
+
+::selection {
+  background: var(--accent-ring);
+  color: var(--text);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex="-1"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.loading,
+.preview-empty {
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  color: var(--text-soft);
+}
+
+.loading {
+  height: 100vh;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(50, 240, 140, 0.14), transparent 28%),
+    var(--bg);
+}
+
+/* Shared decorative eyebrow */
+.section-eyebrow,
+.header-titles > span,
+.preview-heading span {
+  display: block;
+  color: var(--accent-ink);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-heavy);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Motion primitives */
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes studio-page-in {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes health-focus {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(12, 165, 103, 0); }
+  25%, 70% { box-shadow: 0 0 0 4px var(--accent-ring); }
+}
+
+.is-health-focused {
+  animation: health-focus 1.6s var(--ease-studio);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

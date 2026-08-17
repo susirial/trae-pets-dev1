@@ -1,0 +1,64 @@
+TRAE Pet Third-Party Notices
+================================
+
+This file identifies major third-party software distributed with TRAE Pet
+0.3.0. It is a distribution notice, not a complete dependency
+inventory or legal audit. Review the packaged software and upstream license
+files for the versions you ship.
+
+Electron and Chromium
+---------------------
+Electron is distributed under the MIT License and bundles Chromium and other
+third-party software under their respective licenses. The complete Chromium
+and Electron bundled notices are distributed with the Electron Framework in
+the packaged application (including the framework's LICENSES.chromium.html
+where supplied by Electron). Those bundled notices control for their
+components and are incorporated here by reference.
+
+Electron: Copyright OpenJS Foundation and Electron contributors.
+Chromium: Copyright 2015 The Chromium Authors.
+
+Chromium's core BSD-style license permits redistribution in source and binary
+forms, with or without modification, provided that its copyright notice,
+conditions, and disclaimer are retained; neither the copyright holder nor
+contributors' names may be used to endorse derived products without specific
+prior written permission. Chromium is provided "AS IS", without express or
+implied warranties.
+
+Node.js
+-------
+Node.js is Copyright Node.js contributors and is distributed under the MIT
+License. Node.js also includes third-party software under additional licenses;
+Electron contains Node.js as part of the Electron Framework, whose bundled
+notices remain applicable. TRAE Pet does not distribute a separate Node.js
+runtime for Hook execution; users provide a supported system Node.js install.
+
+React and ReactDOM
+------------------
+React and ReactDOM are Copyright Meta Platforms, Inc. and affiliates and are
+distributed under the MIT License.
+
+adm-zip
+-------
+adm-zip is Copyright Another-D-Mention Software and other contributors and is
+distributed under the MIT License.
+
+MIT License Text
+----------------
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

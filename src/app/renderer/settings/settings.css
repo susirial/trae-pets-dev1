@@ -1,0 +1,10 @@
+/* =============================================================
+   TRAE Pet Studio — stylesheet entry
+   Layered, token-driven CSS. Import order matters:
+   tokens -> base -> primitives -> layout -> panels
+   ============================================================= */
+@import "./styles/tokens.css";
+@import "./styles/base.css";
+@import "./styles/primitives.css";
+@import "./styles/layout.css";
+@import "./styles/panels.css";

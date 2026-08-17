@@ -1,0 +1,192 @@
+{
+  "schema": "trae.pet.manifest.v2",
+  "schemaVersion": 2,
+  "identity": {
+    "id": "orc-warrior",
+    "name": "兽人战士",
+    "description": "原创兽人战士，青绿部落纹身与赤红莫霍克，背负巨型战斧，随智能体怒吼、冲锋与英勇打击。",
+    "version": "2.0.0"
+  },
+  "visuals": {
+    "idle": {
+      "file": "idle.webp",
+      "fps": 10,
+      "loopKind": "seamless-loop"
+    },
+    "waving": {
+      "file": "battle-roar.webp",
+      "fps": 10,
+      "loopKind": "one-shot-then-idle"
+    },
+    "running-left": {
+      "file": "run-left.webp",
+      "fps": 10,
+      "loopKind": "seamless-loop"
+    },
+    "running-right": {
+      "file": "run-right.webp",
+      "fps": 10,
+      "loopKind": "seamless-loop"
+    },
+    "waiting": {
+      "file": "defensive.webp",
+      "fps": 8,
+      "loopKind": "seamless-loop"
+    },
+    "review": {
+      "file": "defensive.webp",
+      "fps": 8,
+      "loopKind": "seamless-loop"
+    },
+    "jumping": {
+      "file": "slam.webp",
+      "fps": 12,
+      "loopKind": "one-shot"
+    },
+    "happy": {
+      "file": "flex.webp",
+      "fps": 12,
+      "loopKind": "one-shot-then-idle"
+    },
+    "failed": {
+      "file": "death.webp",
+      "fps": 8,
+      "loopKind": "one-shot-then-idle"
+    },
+    "heroic-strike": {
+      "file": "heroic-strike.webp",
+      "fps": 8,
+      "loopKind": "one-shot"
+    }
+  },
+  "actions": {
+    "heroic-strike": {
+      "state": "heroic-strike",
+      "fallback": "idle"
+    }
+  },
+  "sounds": {
+    "orc-voice": {
+      "file": "audio/orc-voice.mp3"
+    },
+    "orc-charge": {
+      "file": "audio/orc-charge.mp3"
+    },
+    "orc-fight": {
+      "file": "audio/orc-fight.mp3"
+    },
+    "orgrimmar-ambience": {
+      "file": "audio/orgrimmar-ambience.mp3",
+      "volume": 0.3
+    }
+  },
+  "stateSounds": {
+    "idle": "orgrimmar-ambience",
+    "waving": "orc-voice",
+    "happy": "orc-fight",
+    "jumping": "orc-fight",
+    "running-left": "orc-charge",
+    "running-right": "orc-charge",
+    "heroic-strike": "orc-fight"
+  },
+  "interaction": {
+    "clickAction": "heroic-strike"
+  },
+  "presentation": {
+    "scale": 1.3,
+    "anchor": "bottom-center"
+  },
+  "theme": {
+    "primary": "#B5392F",
+    "accent": "#B5392F",
+    "bubble": "#FFFFFF"
+  },
+  "author": {
+    "name": "TRAE Pets Community contributors"
+  },
+  "license": {
+    "name": "Unspecified"
+  },
+  "id": "orc-warrior",
+  "name": "兽人战士",
+  "description": "原创兽人战士，青绿部落纹身与赤红莫霍克，背负巨型战斧，随智能体怒吼、冲锋与英勇打击。",
+  "version": 2,
+  "basePath": ".",
+  "thumbnailEmotion": "idle",
+  "defaultVolume": 0.7,
+  "fileOverrides": {
+    "waving": "battle-roar.webp",
+    "happy": "flex.webp",
+    "jumping": "slam.webp",
+    "waiting": "defensive.webp",
+    "review": "defensive.webp",
+    "failed": "death.webp",
+    "running-left": "run-left.webp",
+    "running-right": "run-right.webp"
+  },
+  "defaultSounds": [
+    {
+      "clipId": "orc-voice",
+      "name": "兽人语音"
+    },
+    {
+      "clipId": "orc-charge",
+      "name": "兽人冲锋"
+    },
+    {
+      "clipId": "orc-fight",
+      "name": "兽人战吼"
+    },
+    {
+      "clipId": "orgrimmar-ambience",
+      "name": "奥格瑞玛氛围"
+    }
+  ],
+  "defaultStateSounds": {
+    "idle": {
+      "clipId": "orgrimmar-ambience",
+      "source": "system"
+    },
+    "waving": {
+      "clipId": "orc-voice",
+      "source": "system"
+    },
+    "happy": {
+      "clipId": "orc-fight",
+      "source": "system"
+    },
+    "jumping": {
+      "clipId": "orc-fight",
+      "source": "system"
+    },
+    "running-left": {
+      "clipId": "orc-charge",
+      "source": "system"
+    },
+    "running-right": {
+      "clipId": "orc-charge",
+      "source": "system"
+    }
+  },
+  "defaultCursorInteraction": {
+    "sizePx": 288,
+    "clickAction": {
+      "kind": "action",
+      "id": "heroic-strike"
+    },
+    "soundClipId": "orc-fight"
+  },
+  "galleryPresentation": {
+    "scale": 1.3,
+    "offsetY": -5
+  },
+  "actionMetadata": {
+    "heroic-strike": {
+      "name": "英勇打击",
+      "durationMs": 2300,
+      "retrigger": "restart",
+      "soundClipId": "orc-fight",
+      "featured": true
+    }
+  }
+}

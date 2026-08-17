@@ -1,0 +1,59 @@
+{
+  "name": "trae-pet",
+  "version": "0.3.0",
+  "private": true,
+  "description": "TRAE desktop pet — TypeScript + React + Electron with a visual configurator.",
+  "author": "TRAE Pet",
+  "license": "MIT",
+  "main": "out/main/index.js",
+  "engines": {
+    "node": ">=22.12.0 <23 || >=24.0.0 <25"
+  },
+  "scripts": {
+    "dev": "electron-vite dev",
+    "start": "electron-vite preview",
+    "stop": "node bin/trae-pet.js stop",
+    "build:cli": "tsup",
+    "secure-core:build": "node scripts/prepare-secure-core.mjs",
+    "build:app": "electron-vite build",
+    "build": "npm run build:cli && npm run build:app",
+    "preview": "electron-vite preview",
+    "typecheck:node": "tsc -p tsconfig.node.json --noEmit",
+    "typecheck:web": "tsc -p tsconfig.web.json --noEmit",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "test:node": "node --experimental-strip-types --test tests/*.test.mjs",
+    "verify": "npm run typecheck && npm run test:node && npm run build && node scripts/release-preflight.mjs",
+    "package": "npm run package:mac",
+    "package:win": "npm run verify && electron-builder --win --x64",
+    "package:mac": "export CSC_IDENTITY_AUTO_DISCOVERY=false && npm run verify && npm run secure-core:build && electron-builder --mac --arm64 --x64",
+    "package:mac:arm64": "export CSC_IDENTITY_AUTO_DISCOVERY=false && npm run verify && npm run secure-core:build && electron-builder --mac --arm64",
+    "package:mac:x64": "export CSC_IDENTITY_AUTO_DISCOVERY=false && npm run verify && npm run secure-core:build && electron-builder --mac --x64",
+    "package:linux": "npm run verify && electron-builder --linux --x64",
+    "release:local": "node scripts/release.mjs",
+    "release:mac:stable": "node scripts/release.mjs --platform=mac --arch=all --channel=stable",
+    "release:mac:security-test": "node scripts/release.mjs --platform=mac --arch=all --channel=security-test",
+    "release:verify": "node scripts/verify-release.mjs",
+    "verify:mac-signing": "node scripts/verify-mac-signing.mjs --dir=release/final",
+    "cli": "node bin/trae-pet.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.6.0"
+  },
+  "devDependencies": {
+    "@electron/fuses": "^2.1.3",
+    "@types/adm-zip": "^0.5.8",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^42.3.0",
+    "electron-builder": "^26.8.1",
+    "electron-vite": "^5.0.0",
+    "javascript-obfuscator": "^5.5.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "vite": "^7.3.3"
+  }
+}

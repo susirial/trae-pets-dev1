@@ -1,0 +1,37 @@
+{
+  "schema": "trae.pet.config.v5",
+  "pet": {
+    "selectedId": "trae",
+    "displayName": "TRAE 宠物",
+    "description": "陪你写代码的桌面小伙伴"
+  },
+  "privacy": {
+    "showPromptText": false,
+    "showCommandArgs": false,
+    "redactSecrets": true,
+    "historyEnabled": true
+  },
+  "audio": {
+    "enabled": true,
+    "volume": 0.8
+  },
+  "window": {
+    "width": 280,
+    "height": 400,
+    "scale": 1,
+    "position": "bottom-right",
+    "alwaysOnTop": true
+  },
+  "petOverrides": {},
+  "states": [
+    { "id": "idle", "label": "待命", "enabled": true, "builtin": true, "fps": 10, "loopKind": "seamless-loop", "oneShot": false, "priority": 10, "holdMs": 0, "fallback": "idle", "severity": "info", "text": { "title": "待命中", "message": "准备好接收下一个请求 ✨" }, "audio": { "enabled": false, "mode": "once", "count": 1, "volume": null } },
+    { "id": "waving", "label": "打招呼", "enabled": true, "builtin": true, "fps": 10, "loopKind": "one-shot-then-idle", "oneShot": true, "priority": 30, "holdMs": 0, "fallback": "idle", "severity": "info", "text": { "title": "你好呀", "message": "新的会话开始啦，一起开干 👋" }, "audio": { "enabled": false, "mode": "once", "count": 1, "volume": null } },
+    { "id": "running-right", "label": "向右奔跑", "enabled": true, "builtin": true, "fps": 10, "loopKind": "seamless-loop", "oneShot": false, "priority": 20, "holdMs": 0, "fallback": "idle", "severity": "info", "text": { "title": "出发", "message": "{summary}" }, "audio": { "enabled": false, "mode": "once", "count": 1, "volume": null } },
+    { "id": "running-left", "label": "向左奔跑", "enabled": true, "builtin": true, "fps": 10, "loopKind": "seamless-loop", "oneShot": false, "priority": 20, "holdMs": 0, "fallback": "idle", "severity": "info", "text": { "title": "折返", "message": "{summary}" }, "audio": { "enabled": false, "mode": "once", "count": 1, "volume": null } },
+    { "id": "waiting", "label": "等待执行", "enabled": true, "builtin": true, "fps": 8, "loopKind": "seamless-loop", "oneShot": false, "priority": 50, "holdMs": 0, "fallback": "idle", "severity": "info", "text": { "title": "执行中", "message": "正在运行 {summary}" }, "audio": { "enabled": false, "mode": "once", "count": 1, "volume": null } },
+    { "id": "review", "label": "审阅", "enabled": true, "builtin": true, "fps": 8, "loopKind": "seamless-loop", "oneShot": false, "priority": 40, "holdMs": 0, "fallback": "idle", "severity": "info", "text": { "title": "查看中", "message": "{summary}" }, "audio": { "enabled": false, "mode": "once", "count": 1, "volume": null } },
+    { "id": "jumping", "label": "雀跃", "enabled": true, "builtin": true, "fps": 12, "loopKind": "one-shot", "oneShot": true, "priority": 70, "holdMs": 1000, "fallback": "idle", "severity": "success", "text": { "title": "文件已更新", "message": "{summary} 🎉" }, "audio": { "enabled": false, "mode": "once", "count": 1, "volume": null } },
+    { "id": "failed", "label": "出错", "enabled": true, "builtin": true, "fps": 8, "loopKind": "one-shot-then-idle", "oneShot": true, "priority": 90, "holdMs": 1800, "fallback": "idle", "severity": "error", "text": { "title": "出错了", "message": "{result}" }, "audio": { "enabled": false, "mode": "once", "count": 1, "volume": null } },
+    { "id": "happy", "label": "完成", "enabled": true, "builtin": true, "fps": 12, "loopKind": "one-shot-then-idle", "oneShot": true, "priority": 80, "holdMs": 1200, "fallback": "idle", "severity": "success", "text": { "title": "搞定", "message": "{summary} ✅" }, "audio": { "enabled": false, "mode": "once", "count": 1, "volume": null } }
+  ]
+}

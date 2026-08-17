@@ -1,0 +1,89 @@
+{
+  "schema": "trae.pet.install.v1",
+  "app": {
+    "name": "TRAE Pet",
+    "version": "0.3.0",
+    "channel": "unsigned-preview",
+    "license": "MIT",
+    "signing": {
+      "macos": {
+        "signed": false,
+        "notarized": false,
+        "stapled": false,
+        "teamId": null
+      }
+    }
+  },
+  "requirements": {
+    "systemNodeRequired": true,
+    "node": {
+      "min": "22.12.0",
+      "majors": [22, 24],
+      "recommended": "24 LTS"
+    },
+    "traeHooksConfig": {
+      "discovery": "每个真实存在的 TRAE 配置目录都会被接入；符号链接与非 TRAE 目录会被跳过",
+      "pattern": {
+        "darwin": "~/.trae*/hooks.json",
+        "linux": "~/.trae*/hooks.json",
+        "win32": "%USERPROFILE%\\.trae*\\hooks.json"
+      },
+      "knownProfiles": {
+        "trae": "TRAE 国际版",
+        "trae-cn": "TRAE 国内版",
+        "trae-beta": "TRAE Beta"
+      }
+    }
+  },
+  "autoInstall": {
+    "onEveryLaunch": true,
+    "description": "启动应用即自动接入全部已安装的 TRAE 版本，无需手动编辑 hooks.json",
+    "reportFile": {
+      "darwin": "~/Library/Application Support/trae-pet/hook-install-report.json",
+      "win32": "%APPDATA%\\trae-pet\\hook-install-report.json",
+      "linux": "${XDG_CONFIG_HOME:-~/.config}/trae-pet/hook-install-report.json"
+    },
+    "manualFallback": "<launcher> install-hooks"
+  },
+  "platforms": {
+    "darwin": {
+      "arch": ["arm64", "x64"],
+      "artifactPatterns": ["TRAE-Pet-*-mac-arm64.dmg", "TRAE-Pet-*-mac-x64.dmg"],
+      "launcher": "/Applications/TRAE Pet.app/Contents/Resources/bin/trae-pet.sh"
+    },
+    "win32": {
+      "arch": ["x64"],
+      "artifactPattern": "TRAE-Pet-*-win-x64-setup.exe",
+      "launcher": "<installDir>\\resources\\bin\\trae-pet.cmd"
+    },
+    "linux": {
+      "arch": ["x64"],
+      "artifactPatterns": ["TRAE-Pet-*-linux-x64.AppImage", "TRAE-Pet-*-linux-x64.deb"],
+      "launcher": "<installDir>/resources/bin/trae-pet.sh"
+    }
+  },
+  "commands": {
+    "install": "<launcher> install-hooks",
+    "verify": "<launcher> verify-hooks",
+    "doctor": "<launcher> doctor",
+    "info": "<launcher> install-info",
+    "uninstall": "<launcher> uninstall-hooks",
+    "restoreBackup": "<launcher> uninstall-hooks --restore-backup",
+    "scopeFlags": ["--profile=trae-cn,trae", "--dir=<absolute path>"]
+  },
+  "expected": {
+    "install": { "ok": true, "profilesAllOk": true },
+    "verify": { "ok": true, "stateUpdated": true, "profilesAllOk": true },
+    "doctor": { "ok": true }
+  },
+  "userData": {
+    "darwin": "~/Library/Application Support/trae-pet",
+    "win32": "%APPDATA%\\trae-pet",
+    "linux": "${XDG_CONFIG_HOME:-~/.config}/trae-pet"
+  },
+  "docs": {
+    "entry": "SETUP.md",
+    "agent": "AGENTS.md",
+    "troubleshooting": "TROUBLESHOOTING.md"
+  }
+}

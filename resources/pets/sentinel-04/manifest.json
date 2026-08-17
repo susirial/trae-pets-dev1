@@ -1,0 +1,165 @@
+{
+  "schema": "trae.pet.manifest.v2",
+  "schemaVersion": 2,
+  "identity": {
+    "id": "sentinel-04",
+    "name": "先锋 Vanguard-04",
+    "description": "原创反恐战术先锋，以消音卡宾枪警戒、切刀疾行和残局拆弹回应每一次任务推进。",
+    "version": "2.0.0"
+  },
+  "visuals": {
+    "idle": {
+      "file": "idle.webp",
+      "fps": 10,
+      "loopKind": "seamless-loop"
+    },
+    "waving": {
+      "file": "waving.webp",
+      "fps": 10,
+      "loopKind": "one-shot-then-idle"
+    },
+    "running-left": {
+      "file": "running-left.webp",
+      "fps": 10,
+      "loopKind": "seamless-loop"
+    },
+    "running-right": {
+      "file": "running-right.webp",
+      "fps": 10,
+      "loopKind": "seamless-loop"
+    },
+    "waiting": {
+      "file": "waiting.webp",
+      "fps": 8,
+      "loopKind": "seamless-loop"
+    },
+    "review": {
+      "file": "review.webp",
+      "fps": 8,
+      "loopKind": "seamless-loop"
+    },
+    "jumping": {
+      "file": "jumping.webp",
+      "fps": 12,
+      "loopKind": "one-shot"
+    },
+    "happy": {
+      "file": "happy.webp",
+      "fps": 12,
+      "loopKind": "one-shot-then-idle"
+    },
+    "failed": {
+      "file": "failed.webp",
+      "fps": 8,
+      "loopKind": "one-shot-then-idle"
+    },
+    "clutch-defuse": {
+      "file": "clutch-defuse.webp",
+      "fps": 8,
+      "loopKind": "one-shot"
+    }
+  },
+  "actions": {
+    "clutch-defuse": {
+      "state": "clutch-defuse",
+      "fallback": "idle"
+    }
+  },
+  "sounds": {
+    "m4": {
+      "file": "audio/m4.mp3"
+    },
+    "cs-knife": {
+      "file": "audio/cs-knife.mp3"
+    },
+    "cs-walk": {
+      "file": "audio/cs-walk.mp3"
+    }
+  },
+  "stateSounds": {
+    "happy": "m4",
+    "jumping": "cs-walk",
+    "running-left": "cs-knife",
+    "running-right": "cs-walk",
+    "clutch-defuse": "m4"
+  },
+  "interaction": {
+    "clickAction": "clutch-defuse"
+  },
+  "presentation": {
+    "scale": 1.3,
+    "anchor": "bottom-center"
+  },
+  "theme": {
+    "primary": "#69B7FF",
+    "accent": "#69B7FF",
+    "bubble": "#FFFFFF"
+  },
+  "author": {
+    "name": "TRAE Pets Community contributors"
+  },
+  "license": {
+    "name": "Unspecified"
+  },
+  "id": "sentinel-04",
+  "name": "先锋 Vanguard-04",
+  "description": "原创反恐战术先锋，以消音卡宾枪警戒、切刀疾行和残局拆弹回应每一次任务推进。",
+  "version": 2,
+  "basePath": ".",
+  "thumbnailEmotion": "idle",
+  "defaultVolume": 0.65,
+  "fileOverrides": {},
+  "defaultSounds": [
+    {
+      "clipId": "m4",
+      "name": "M4 点射"
+    },
+    {
+      "clipId": "cs-knife",
+      "name": "切刀"
+    },
+    {
+      "clipId": "cs-walk",
+      "name": "战术脚步"
+    }
+  ],
+  "defaultStateSounds": {
+    "happy": {
+      "clipId": "m4",
+      "source": "system"
+    },
+    "jumping": {
+      "clipId": "cs-walk",
+      "source": "system"
+    },
+    "running-left": {
+      "clipId": "cs-knife",
+      "source": "system"
+    },
+    "running-right": {
+      "clipId": "cs-walk",
+      "source": "system"
+    }
+  },
+  "defaultCursorInteraction": {
+    "sizePx": 288,
+    "clickAction": {
+      "kind": "action",
+      "id": "clutch-defuse"
+    },
+    "soundClipId": "m4"
+  },
+  "galleryPresentation": {
+    "scale": 1.3,
+    "offsetY": -8
+  },
+  "actionMetadata": {
+    "clutch-defuse": {
+      "name": "残局拆弹",
+      "durationMs": 5000,
+      "retrigger": "restart",
+      "soundClipId": "m4",
+      "featured": true
+    }
+  }
+}

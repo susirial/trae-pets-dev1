@@ -1,0 +1,14 @@
+node_modules/
+out/
+dist/
+release/
+build/downloads/
+build/secure-core/
+build/obfuscation-manifest.json
+logs/
+*.log
+.DS_Store
+.eslintcache
+.superpowers/
+midscene_run/
+.dbg/

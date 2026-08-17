@@ -1,0 +1,23 @@
+{
+  "schema": "trae.pet.release.v1",
+  "channel": "unsigned-preview",
+  "commercialChannel": "stable",
+  "testChannel": "security-test",
+  "legal": {
+    "issuer": "TRAE Pet",
+    "reviewStatus": "test-only"
+  },
+  "supportedNode": {
+    "min": "22.12.0",
+    "majors": [22, 24],
+    "recommended": "24 LTS"
+  },
+  "mac": {
+    "teamId": "563C77XM96",
+    "identityPrefix": "Developer ID Application:"
+  },
+  "containers": {
+    "windows": "electronuserland/builder:wine",
+    "linux": "electronuserland/builder:20"
+  }
+}

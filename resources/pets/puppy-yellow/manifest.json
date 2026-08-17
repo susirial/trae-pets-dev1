@@ -1,0 +1,125 @@
+{
+  "schema": "trae.pet.manifest.v2",
+  "schemaVersion": 2,
+  "identity": {
+    "id": "puppy-yellow",
+    "name": "小黄狗",
+    "description": "元气小黄狗，摇头摆尾随智能体一起等待、奔跑与欢呼。",
+    "version": "2.0.0"
+  },
+  "visuals": {
+    "idle": {
+      "file": "idle.webp",
+      "fps": 10,
+      "loopKind": "seamless-loop"
+    },
+    "waving": {
+      "file": "waving.webp",
+      "fps": 10,
+      "loopKind": "one-shot-then-idle"
+    },
+    "running-left": {
+      "file": "running-left.webp",
+      "fps": 10,
+      "loopKind": "seamless-loop"
+    },
+    "running-right": {
+      "file": "running-right.webp",
+      "fps": 10,
+      "loopKind": "seamless-loop"
+    },
+    "waiting": {
+      "file": "waiting.webp",
+      "fps": 8,
+      "loopKind": "seamless-loop"
+    },
+    "review": {
+      "file": "review.webp",
+      "fps": 8,
+      "loopKind": "seamless-loop"
+    },
+    "jumping": {
+      "file": "happy-hop.webp",
+      "fps": 12,
+      "loopKind": "one-shot"
+    },
+    "happy": {
+      "file": "happy.webp",
+      "fps": 12,
+      "loopKind": "one-shot-then-idle"
+    },
+    "failed": {
+      "file": "failed.webp",
+      "fps": 8,
+      "loopKind": "one-shot-then-idle"
+    }
+  },
+  "actions": {},
+  "sounds": {
+    "coin": {
+      "file": "audio/coin.mp3"
+    },
+    "money": {
+      "file": "audio/money.mp3"
+    }
+  },
+  "stateSounds": {
+    "happy": "coin"
+  },
+  "interaction": {
+    "clickAction": "waving"
+  },
+  "presentation": {
+    "scale": 1.0,
+    "anchor": "bottom-center"
+  },
+  "theme": {
+    "primary": "#F5C542",
+    "accent": "#F5C542",
+    "bubble": "#FFFFFF"
+  },
+  "author": {
+    "name": "TRAE Pets Community contributors"
+  },
+  "license": {
+    "name": "Unspecified"
+  },
+  "id": "puppy-yellow",
+  "name": "小黄狗",
+  "description": "元气小黄狗，摇头摆尾随智能体一起等待、奔跑与欢呼。",
+  "version": 2,
+  "basePath": ".",
+  "thumbnailEmotion": "idle",
+  "defaultVolume": 0.7,
+  "fileOverrides": {
+    "jumping": "happy-hop.webp"
+  },
+  "defaultSounds": [
+    {
+      "clipId": "coin",
+      "name": "金币"
+    },
+    {
+      "clipId": "money",
+      "name": "收钱"
+    }
+  ],
+  "defaultStateSounds": {
+    "happy": {
+      "clipId": "coin",
+      "source": "system"
+    }
+  },
+  "defaultCursorInteraction": {
+    "sizePx": 176,
+    "clickAction": {
+      "kind": "emotion",
+      "id": "waving"
+    },
+    "soundClipId": null
+  },
+  "galleryPresentation": {
+    "scale": 1.0,
+    "offsetY": 0
+  }
+}

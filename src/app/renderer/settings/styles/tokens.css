@@ -1,0 +1,92 @@
+/* =============================================================
+   Design tokens — TRAE Pet Studio
+   Single source of truth for color, spacing, type, elevation,
+   radius and motion. Light + green brand, refined.
+   ============================================================= */
+:root {
+  /* Surfaces */
+  --bg: #f4f6f5;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --bg-panel: #f8faf9;
+  --bg-control: #f7f9f8;
+  --bg-inset: #edf1ef;
+
+  /* Borders */
+  --border: rgba(17, 24, 20, 0.1);
+  --border-strong: rgba(17, 24, 20, 0.2);
+
+  /* Text */
+  --text: #151a17;
+  --text-strong: #303934;
+  --text-soft: #68716c;
+  --text-faint: #8a938d;
+
+  /* Brand / accent */
+  --accent: #0ca567;
+  --accent-2: #32f08c;
+  --accent-strong: #078d58;
+  --accent-ink: #08794d;
+  --accent-soft: rgba(12, 165, 103, 0.1);
+  --accent-ring: rgba(12, 165, 103, 0.16);
+
+  /* Semantic */
+  --success: #0b9b61;
+  --warning: #b56b08;
+  --danger: #d74652;
+  --danger-soft: rgba(215, 70, 82, 0.1);
+
+  /* Dark surfaces (live stage / rail) */
+  --surface-dark: #05070a;
+  --surface-dark-elevated: #0c1012;
+
+  /* Spacing scale (4pt base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Radius */
+  --radius-xs: 8px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --radius-stage: 28px;
+
+  /* Type scale */
+  --fs-2xs: 9px;
+  --fs-xs: 10px;
+  --fs-sm: 11px;
+  --fs-base: 12px;
+  --fs-md: 13px;
+  --fs-lg: 15px;
+  --fs-xl: 19px;
+  --fs-2xl: 22px;
+  --fs-3xl: 34px;
+
+  /* Font weight */
+  --fw-medium: 500;
+  --fw-semibold: 650;
+  --fw-bold: 750;
+  --fw-heavy: 800;
+  --fw-black: 850;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(17, 24, 20, 0.05);
+  --shadow-2: 0 18px 50px -34px rgba(14, 37, 25, 0.28);
+  --shadow-3: 0 32px 100px rgba(5, 20, 12, 0.24);
+  --shadow-accent: 0 10px 24px -14px rgba(12, 165, 103, 0.75);
+
+  /* Motion */
+  --dur-fast: 120ms;
+  --dur-base: 160ms;
+  --dur-slow: 240ms;
+  --ease-studio: cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: light;
+  font-family: "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+}

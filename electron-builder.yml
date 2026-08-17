@@ -1,0 +1,88 @@
+appId: com.trae.pet
+productName: TRAE Pet
+copyright: Copyright © 2026 TRAE Pet
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - out/**/*
+  - package.json
+
+# Bundled, read-only defaults and the hook CLI are shipped as extra resources.
+# At runtime everything writable lives under the OS user-data directory.
+extraResources:
+  - from: resources
+    to: resources
+  - from: dist
+    to: cli
+  - from: bin
+    to: bin
+  - from: LICENSE
+    to: LICENSE
+  - from: THIRD_PARTY_NOTICES.txt
+    to: THIRD_PARTY_NOTICES.txt
+
+asar: true
+removePackageScripts: true
+icon: build/mj_logo.png
+electronFuses:
+  runAsNode: false
+  # This app has no cookie-backed session or network API. Electron 42 on the
+  # supported macOS baseline can stall before the main entrypoint when this
+  # optional fuse is enabled, so keep it off and rely on connect-src 'none'.
+  enableCookieEncryption: false
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  enableEmbeddedAsarIntegrityValidation: true
+  onlyLoadAppFromAsar: true
+  grantFileProtocolExtraPrivileges: false
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: TRAE-Pet-${version}-win-${arch}-setup.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+  # First launch performs the TRAE hook auto-install, so finish the installer by
+  # starting the app instead of leaving the user with a manual CLI step.
+  runAfterFinish: true
+
+mac:
+  extraResources:
+    - from: build/secure-core/mac-${arch}/trae-pet-secure-core
+      to: secure-core/trae-pet-secure-core
+  target:
+    - target: dmg
+      arch:
+        - arm64
+        - x64
+  category: public.app-category.developer-tools
+  artifactName: TRAE-Pet-${version}-mac-${arch}.${ext}
+  hardenedRuntime: true
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+    - target: deb
+      arch:
+        - x64
+  category: Development
+  executableName: trae-pet
+  maintainer: TRAE Pet <茉卷@trae-pet>
+  artifactName: TRAE-Pet-${version}-linux-${arch}.${ext}
+
+dmg:
+  title: ${productName} ${version}
+  sign: true
