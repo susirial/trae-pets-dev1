@@ -1,14 +1,22 @@
+<div align="center">
+
+<img src="./docs/website/trae-park-poster.webp" alt="TRAE Pet" width="800" />
+
 # TRAE Pet
 
-![TRAE Pets Cover](./docs/1-cover-trae-pets.jpeg)
+### 让智能体，从此有生命。
 
-![License](https://img.shields.io/badge/license-MIT-green)
-![Build](https://img.shields.io/badge/build-not%20configured-lightgrey)
-![Coverage](https://img.shields.io/badge/coverage-not%20tracked-lightgrey)
-![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-2563eb)
-![Electron](https://img.shields.io/badge/Electron-42.x-47848F?logo=electron&logoColor=white)
-![React](https://img.shields.io/badge/React-19.x-149ECA?logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-6.x-3178C6?logo=typescript&logoColor=white)
+TRAE 宝读懂每一次思考、执行、成功与失误，让 AI 协作不再冰冷。
+
+[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-2563eb)](#)
+[![Electron](https://img.shields.io/badge/Electron-42.x-47848F?logo=electron&logoColor=white)](#)
+[![React](https://img.shields.io/badge/React-19.x-149ECA?logo=react&logoColor=white)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6.x-3178C6?logo=typescript&logoColor=white)](#)
+
+[🏠 官网](https://www.trae-pets.com/) · [🚀 快速启动](#快速启动tldr) · [🎬 九种状态](#-九种实时状态ai-的每一步都看得见) · [🎭 内置角色](#-内置角色十位伙伴总有一只适合你的桌面) · [🌐 更多角色](#-官网还有更多角色宇宙持续上新)
+
+</div>
 
 > 把 TRAE 的 Hook 事件转成可视化桌宠反馈的 Electron 工具：在桌面实时展示“正在审阅 / 执行 / 完成 / 出错”等状态，并提供可视化配置界面，让开发者能用宠物包、提示气泡和自定义文案把 AI 编码过程变得可见、可配、可玩。
 
@@ -20,6 +28,36 @@
 2. **反馈方式缺乏个性化**：默认日志或命令行输出不够直观，也无法根据个人偏好自定义动画、文案和提示风格。
 
 本项目通过“**轻量 Hook CLI + 常驻 Electron 桌宠 + 可视化配置面板**”的组合，将 TRAE 的事件流映射成状态动画与提示文案。用户既可以直接使用内置宠物，也可以在设置页导入标准 Manifest v2 宠物包，或用九张标准状态图片快速制作自己的宠物。
+
+## 🎬 九种实时状态：AI 的每一步，都看得见
+
+TRAE 宝不是浮在界面上的装饰。它把智能体的真实工作过程，翻译成有温度的动作与反馈 —— 思考、调用、推进、庆祝、重启，全都有对应的角色动画（下方均为实时动图）：
+
+| | | |
+|:---:|:---:|:---:|
+| <img src="./resources/pets/trae/waving.webp" width="120" /><br><b>waving</b><br><sub>新会话上线，搭档报到</sub> | <img src="./resources/pets/trae/review.webp" width="120" /><br><b>review</b><br><sub>正在理解任务与上下文</sub> | <img src="./resources/pets/trae/waiting.webp" width="120" /><br><b>waiting</b><br><sub>正在调用工具执行中</sub> |
+| <img src="./resources/pets/trae/running-right.webp" width="120" /><br><b>running</b><br><sub>任务推进中，全速奔跑</sub> | <img src="./resources/pets/trae/jumping.webp" width="120" /><br><b>jumping</b><br><sub>文件更新，雀跃反馈</sub> | <img src="./resources/pets/trae/happy.webp" width="120" /><br><b>happy</b><br><sub>任务完成，一起庆祝</sub> |
+| <img src="./resources/pets/trae/failed.webp" width="120" /><br><b>failed</b><br><sub>遇到问题，陪你重来</sub> | <img src="./resources/pets/trae/running-left.webp" width="120" /><br><b>turning</b><br><sub>切换上下文，流程折返</sub> | <img src="./resources/pets/trae/idle.webp" width="120" /><br><b>idle</b><br><sub>空闲待命，随时出发</sub> |
+
+## 🎭 内置角色：十位伙伴，总有一只适合你的桌面
+
+全部角色开箱即用，可在设置页随时切换；也支持导入社区宠物包或用九张状态图快速自制：
+
+| | | | | |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="./resources/pets/trae/idle.webp" width="96" /><br><b>TRAE 宝</b><br><sub>官方桌宠</sub> | <img src="./resources/pets/puppy-yellow/idle.webp" width="96" /><br><b>小黄狗</b><br><sub>元气汪汪</sub> | <img src="./resources/pets/magic-rabbit/idle.webp" width="96" /><br><b>Magic Rabbit</b><br><sub>魔法师兔</sub> | <img src="./resources/pets/orc-warrior/idle.webp" width="96" /><br><b>兽人战士</b><br><sub>为了部落</sub> | <img src="./resources/pets/ryu/idle.webp" width="96" /><br><b>Ryu</b><br><sub>格斗家</sub> |
+| <img src="./resources/pets/sentinel-04/idle.webp" width="96" /><br><b>先锋 04</b><br><sub>战术警戒</sub> | <img src="./resources/pets/bai-suzhen/idle.webp" width="96" /><br><b>白素贞</b><br><sub>千年等一回</sub> | <img src="./resources/pets/yong-girl/idle.webp" width="96" /><br><b>YoungGirl</b><br><sub>青春少女</sub> | <img src="./resources/pets/shadow-puppetry/idle.webp" width="96" /><br><b>Shadow Puppetry</b><br><sub>皮影戏</sub> | <img src="./resources/pets/little-bro/idle.webp" width="96" /><br><b>Little Bro</b><br><sub>暗影游侠</sub> |
+
+## 🌐 官网还有更多：角色宇宙持续上新
+
+[trae-pets.com](https://www.trae-pets.com/) 的角色宇宙已有 **26 位伙伴**，包含非遗文创、东方奇幻与战术系列，并带有专属技能动作与配音。以下为官网精选（动图下载自官网）：
+
+| | | |
+|:---:|:---:|:---:|
+| <img src="./docs/website/pet-qingqing.webp" width="110" /><br><b>晴晴</b><br><sub>油纸伞守护灵 · 非遗系列</sub> | <img src="./docs/website/pet-lanlin.webp" width="110" /><br><b>蓝麟</b><br><sub>东方瑞兽</sub> | <img src="./docs/website/pet-qingluan.webp" width="110" /><br><b>青峦</b><br><sub>山峦之灵</sub> |
+| <img src="./docs/website/pet-zhuling.webp" width="110" /><br><b>珠翎</b><br><sub>翎羽仙子</sub> | <img src="./docs/website/pet-ember-core.webp" width="110" /><br><b>烬衡</b><br><sub>余烬核心</sub> | <img src="./docs/website/pet-reaper.webp" width="110" /><br><b>死神</b><br><sub>暗夜收割者</sub> |
+
+→ 完整角色宇宙与 TRAE TV 创作间隙频道，见 [官网 pets 页](https://www.trae-pets.com/pets)。
 
 ## 核心功能模块
 
